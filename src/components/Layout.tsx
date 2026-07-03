@@ -74,7 +74,7 @@ export function Navbar() {
           : "bg-ivory/80 backdrop-blur-sm md:bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 md:px-6 py-2 md:py-0 min-h-[56px] md:h-20 flex flex-col lg:flex-row items-center justify-between gap-3 lg:gap-0">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 py-3 md:py-0 min-h-[56px] md:h-20 flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0">
         
         {/* Top Row on Mobile (Logo) */}
         <div className="w-full lg:w-auto flex items-center justify-center lg:justify-start">
@@ -96,13 +96,13 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Mobile Nav (Always Visible, Wrapped) */}
-        <nav className="w-full lg:hidden flex flex-wrap justify-center gap-x-3 sm:gap-x-5 gap-y-2 pt-1 pb-1">
+        {/* Mobile Nav (Pill-based, Highly legible, Separated) */}
+        <nav className="w-full lg:hidden flex flex-wrap justify-center gap-2 pt-2 pb-1">
           {NAV.map((n) => (
             <Link
               key={n.href}
               to={n.href}
-              className="text-[12px] sm:text-sm font-medium text-navy/80 hover:text-navy [&.active]:text-navy [&.active]:font-bold transition-colors"
+              className="text-[13px] font-medium text-navy/90 bg-navy/5 px-3.5 py-2 rounded-full hover:bg-navy/10 border border-navy/5 shadow-sm [&.active]:bg-navy [&.active]:text-ivory [&.active]:border-navy transition-all"
             >
               {n.label}
             </Link>
