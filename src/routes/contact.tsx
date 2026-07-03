@@ -165,14 +165,14 @@ function Contact() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={MAPS_URL} target="_blank" rel="noreferrer" className="btn-gold text-sm">
+              <a href={MAPS_URL} target="_blank" rel="noreferrer" className="btn-gold text-sm min-h-[44px] flex items-center justify-center">
                 <MapPin className="h-4 w-4" /> Get Directions
               </a>
               <a
                 href={waLink("Hi, I'd like to know more about your services.")}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-outline-ivory text-sm"
+                className="btn-outline-ivory text-sm min-h-[44px] flex items-center justify-center"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
@@ -254,7 +254,7 @@ function Contact() {
               </Field>
 
               <div className="sm:col-span-2 flex flex-wrap items-center gap-3 pt-2">
-                <button type="submit" className="btn-gold">
+                <button type="submit" className="btn-gold min-h-[44px]">
                   <Calendar className="h-4 w-4" /> Request Appointment
                 </button>
                 {sent && (
@@ -270,7 +270,7 @@ function Contact() {
         <div className="mt-10 grid lg:grid-cols-2 gap-6 rounded-2xl overflow-hidden shadow-elegant border border-border/60 bg-white">
           <div className="h-64 lg:h-full min-h-[300px]">
             <img 
-              src={galleryReception} 
+              src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783106101/building_fiuhfo.png" 
               alt="Welcome to Dr. Prasanthi's Smile Care" 
               className="w-full h-full object-cover"
             />

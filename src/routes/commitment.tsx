@@ -95,7 +95,7 @@ function CommitmentPage() {
           </div>
 
           <div className="mt-20 md:mt-32 max-w-4xl mx-auto text-center bg-white p-8 md:p-12 rounded-3xl border border-gold/20 shadow-elegant relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('@/assets/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay" />
+            <div className="absolute inset-0 bg-gradient-to-br from-navy/5 to-transparent pointer-events-none" />
             <div className="relative z-10">
               <Sparkles className="h-8 w-8 text-gold mx-auto mb-6" />
               <h2 className="font-display text-2xl md:text-3xl text-navy mb-4">
@@ -105,7 +105,7 @@ function CommitmentPage() {
                 "We are excited to welcome our first patients. Genuine patient testimonials and success stories will be shared here as we begin serving our wonderful community."
               </p>
               <div className="mt-8 flex justify-center">
-                <Link to="/contact" className="btn-gold px-8 py-3.5">
+                <Link to="/contact" className="btn-gold px-8 py-3.5 min-h-[44px]">
                   Be Among Our First Patients <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
               </div>

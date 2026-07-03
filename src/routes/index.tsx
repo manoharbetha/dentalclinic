@@ -98,9 +98,10 @@ function Hero() {
         <div className="lg:col-span-5 relative mt-8 lg:mt-0">
           <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-border/60 aspect-[4/5] lg:aspect-[3/4]">
             <img
-              src={heroClinic}
+              src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783103415/clinic_pic_Ai_vvrqf4.png"
               alt="Premium dental suite"
-              loading="lazy"
+              fetchPriority="high"
+              loading="eager"
               className="h-full w-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-navy/30 to-transparent" />
@@ -182,7 +183,7 @@ function WhyUs() {
           {items.map((it, i) => (
             <div
               key={it.t}
-              className="group bg-white rounded-2xl p-8 border border-border/60 hover:border-gold hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-elegant flex flex-col items-center text-center sm:items-start sm:text-left"
+              className="group bg-white rounded-2xl p-5 md:p-8 border border-border/60 hover:border-gold hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-elegant flex flex-col items-center text-center sm:items-start sm:text-left"
               style={{ animationDelay: `${i * 100}ms` }}
             >
               <div className="h-14 w-14 rounded-full bg-navy/5 text-navy flex items-center justify-center group-hover:bg-gold group-hover:text-white transition-colors mb-6">
@@ -221,11 +222,11 @@ function ExperienceOurClinic() {
           <div className="grid grid-cols-2 gap-4 md:gap-6 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-10" />
             <div className="flex flex-col gap-4 md:gap-6 pt-12 md:pt-20">
-              <img src={galleryReception} alt="Clinic Reception" className="rounded-2xl shadow-elegant object-cover w-full h-48 md:h-64 transition-transform hover:scale-105 duration-700" />
-              <img src={gallerySmile} alt="Happy Patient" className="rounded-2xl shadow-elegant object-cover w-full h-40 md:h-56 transition-transform hover:scale-105 duration-700" />
+              <img src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783102638/2a7acdfd-6b3c-44b1-bb86-c3aafb3fdb38_n1fh3p.png" loading="lazy" alt="Clinic Reception" className="rounded-2xl shadow-elegant object-cover w-full h-48 md:h-64 transition-transform hover:scale-105 duration-700" />
+              <img src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783103787/reception_wk1y5d.png" loading="lazy" alt="Happy Patient" className="rounded-2xl shadow-elegant object-cover w-full h-40 md:h-56 transition-transform hover:scale-105 duration-700" />
             </div>
             <div className="flex flex-col gap-4 md:gap-6">
-              <img src={galleryEquipment} alt="Modern Dental Equipment" className="rounded-2xl shadow-elegant object-cover w-full h-56 md:h-72 transition-transform hover:scale-105 duration-700" />
+              <img src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783105462/4fd50618-4db3-4a85-9587-37875489df7a_hbka2w.png" loading="lazy" alt="Modern Dental Equipment" className="rounded-2xl shadow-elegant object-cover w-full h-56 md:h-72 transition-transform hover:scale-105 duration-700" />
             </div>
           </div>
         </div>

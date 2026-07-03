@@ -13,7 +13,7 @@ function DoctorPage() {
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, #C7A96B 0%, transparent 40%), radial-gradient(circle at 80% 80%, #1E4FA3 0%, transparent 40%)" }} />
         <div className="mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-12 gap-12 md:gap-14 items-center relative">
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          <div className="lg:col-span-5">
             <div className="relative">
               <div className="absolute -inset-3 bg-gradient-to-br from-gold/40 to-royal/30 blur-2xl rounded-3xl" />
               <img
@@ -31,7 +31,7 @@ function DoctorPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          <div className="lg:col-span-7">
             <span className="gold-divider">Meet Your Doctor</span>
             <h2 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl leading-tight">
               Dr. Pentapalli Prasanthi
@@ -68,7 +68,8 @@ function DoctorPage() {
             <div className="mt-8">
               <img 
                 src={galleryTreatment} 
-                alt="Modern Treatment Room" 
+                alt="Modern Treatment Room"
+                loading="lazy"
                 className="w-full h-40 md:h-56 object-cover rounded-2xl shadow-elegant border border-gold/20"
               />
             </div>

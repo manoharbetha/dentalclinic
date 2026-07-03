@@ -72,7 +72,8 @@ function ServicesPage() {
             <div className="rounded-3xl overflow-hidden shadow-elegant w-full h-48 md:h-64 mb-12">
               <img 
                 src={galleryEquipment} 
-                alt="Advanced Dental Technology" 
+                alt="Advanced Dental Technology"
+                loading="lazy"
                 className="w-full h-full object-cover" 
               />
             </div>
@@ -82,7 +83,7 @@ function ServicesPage() {
             {groups.map((g) => (
               <article
                 key={g.cat}
-                className="relative bg-white rounded-2xl p-5 md:p-8 border border-border/60 hover:border-gold transition-all duration-300 hover:shadow-elegant group overflow-hidden"
+                className="relative bg-white rounded-2xl p-4 md:p-8 border border-border/60 hover:border-gold transition-all duration-300 hover:shadow-elegant group overflow-hidden flex flex-col"
               >
                 <div className="absolute top-0 right-0 h-32 w-32 bg-gradient-to-br from-gold/10 to-transparent rounded-bl-full" />
                 <div className="relative flex items-start justify-between">
@@ -102,11 +103,11 @@ function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 pt-4 border-t border-border/60 flex flex-col xl:flex-row items-start xl:items-center justify-between text-xs md:text-sm gap-2">
+                <div className="mt-auto pt-4 border-t border-border/60 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs md:text-sm gap-2">
                   <span className="text-charcoal/50 italic leading-tight">Pricing on consultation</span>
                   <Link
                     to="/contact"
-                    className="text-navy font-medium hover:text-gold transition-colors inline-flex items-center gap-1"
+                    className="text-navy font-medium hover:text-gold transition-colors inline-flex items-center gap-1 min-h-[44px]"
                   >
                     Enquire <ChevronRight className="h-4 w-4" />
                   </Link>

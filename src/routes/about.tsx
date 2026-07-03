@@ -14,9 +14,9 @@ function AboutPage() {
       {/* Intro Section */}
       <section className="py-16 md:py-32">
         <div className="mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="relative order-2 lg:order-1">
+          <div className="relative">
             <img
-              src={galleryReception}
+              src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783103787/reception_wk1y5d.png"
               alt="Reception at Dr. Prasanthi's Smile Care"
               loading="lazy"
               width={1024}
@@ -29,7 +29,7 @@ function AboutPage() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div className="mt-4 lg:mt-0">
             <span className="gold-divider">About The Clinic</span>
             <h2 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-tight">
               A refined space for
@@ -80,8 +80,9 @@ function AboutPage() {
             </div>
             <div className="order-1 lg:order-2">
               <img
-                src={galleryTreatment}
+                src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783105666/7cefd7a2-a8bf-41e1-8833-8e945c08c746_cfwugr.png"
                 alt="Modern Treatment Room"
+                loading="lazy"
                 className="rounded-2xl shadow-elegant w-full object-cover aspect-[4/3] hover:scale-[1.02] transition-transform duration-700"
               />
             </div>
@@ -95,8 +96,9 @@ function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <img
-                src={heroClinic}
+                src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783103415/clinic_pic_Ai_vvrqf4.png"
                 alt="Advanced Dental Technology"
+                loading="lazy"
                 className="rounded-2xl shadow-elegant w-full object-cover aspect-[4/3] hover:scale-[1.02] transition-transform duration-700"
               />
             </div>

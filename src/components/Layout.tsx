@@ -23,10 +23,11 @@ export function waLink(msg: string) {
 export function Logo() {
   return (
     <div className="flex items-center gap-3">
-      <div className="relative h-11 w-11 rounded-full bg-gradient-to-br from-navy to-royal flex items-center justify-center shadow-elegant shrink-0">
-        <span className="font-display text-gold text-xl font-bold">P</span>
-        <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full bg-gold border-2 border-ivory" />
-      </div>
+      <img 
+        src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783102861/logo_zemlw8.png" 
+        alt="Dr. Prasanthi's Smile Care Logo" 
+        className="h-10 md:h-12 w-auto object-contain shrink-0"
+      />
       <div className="flex flex-col mt-0.5">
         <div className="font-display text-navy text-lg md:text-xl font-semibold tracking-wide leading-none">
           Dr. Prasanthi's
@@ -98,16 +99,22 @@ export function Navbar() {
         </div>
 
         {/* Mobile Horizontal Scroll Nav */}
-        <div className="w-full lg:hidden overflow-x-auto pb-2 scrollbar-hide -mx-4 px-4 flex items-center gap-6">
-          {NAV.map((n) => (
-            <Link
-              key={n.href}
-              to={n.href}
-              className="whitespace-nowrap text-[13px] text-navy/70 hover:text-navy [&.active]:text-navy [&.active]:font-semibold relative"
-            >
-              {n.label}
-            </Link>
-          ))}
+        <div className="w-full lg:hidden relative -mx-4">
+          {/* Fade edges to indicate scrollability */}
+          <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-ivory to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-ivory to-transparent z-10 pointer-events-none" />
+          
+          <div className="overflow-x-auto pb-2 px-6 flex items-center gap-1 scrollbar-hide snap-x snap-mandatory">
+            {NAV.map((n) => (
+              <Link
+                key={n.href}
+                to={n.href}
+                className="whitespace-nowrap text-[13px] text-navy/70 hover:text-navy [&.active]:text-navy [&.active]:font-semibold relative snap-start min-h-[44px] min-w-[44px] flex items-center justify-center px-3 py-2 transition-colors rounded-md active:bg-navy/5"
+              >
+                {n.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </header>
@@ -255,16 +262,45 @@ export function LeadPopup() {
   const [show, setShow] = useState(false);
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", treatment: "" });
+  const router = useRouterState();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem("leadShown")) return;
-    const t = setTimeout(() => {
+    if (router.location.pathname === "/contact") return; // Do not show on contact page
+
+    let timeout: NodeJS.Timeout;
+    let fired = false;
+
+    const trigger = () => {
+      if (fired) return;
+      fired = true;
       setShow(true);
       sessionStorage.setItem("leadShown", "1");
-    }, 15000);
-    return () => clearTimeout(t);
-  }, []);
+      window.removeEventListener("scroll", scrollHandler);
+    };
+
+    const scrollHandler = () => {
+      // Trigger at 50% scroll depth
+      const scrollDepth = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (scrollDepth > 0.5) {
+        trigger();
+        clearTimeout(timeout);
+      }
+    };
+
+    // Trigger after 25 seconds
+    timeout = setTimeout(() => {
+      trigger();
+    }, 25000);
+
+    window.addEventListener("scroll", scrollHandler, { passive: true });
+    
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, [router.location.pathname]);
 
   function submit(e: FormEvent) {
     e.preventDefault();
