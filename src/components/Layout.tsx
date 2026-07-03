@@ -58,7 +58,6 @@ export function EmergencyBanner() {
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -67,28 +66,22 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => { document.body.style.overflow = ""; };
-  }, [mobileMenuOpen]);
-
   return (
     <header
       className={`sticky top-0 z-50 transition-all ${
-        scrolled || mobileMenuOpen
+        scrolled
           ? "bg-ivory/95 backdrop-blur-md shadow-[0_4px_20px_-8px_rgba(15,44,89,0.15)]"
           : "bg-ivory/80 backdrop-blur-sm md:bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 md:px-6 h-14 md:h-20 flex items-center justify-between">
-        <Link to="/" className="z-50 shrink-0" onClick={() => setMobileMenuOpen(false)}>
-          <Logo />
-        </Link>
+      <div className="mx-auto max-w-7xl px-4 md:px-6 py-2 md:py-0 min-h-[56px] md:h-20 flex flex-col lg:flex-row items-center justify-between gap-3 lg:gap-0">
+        
+        {/* Top Row on Mobile (Logo) */}
+        <div className="w-full lg:w-auto flex items-center justify-center lg:justify-start">
+          <Link to="/" className="z-50 shrink-0">
+            <Logo />
+          </Link>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
@@ -103,47 +96,27 @@ export function Navbar() {
           ))}
         </nav>
 
+        {/* Mobile Nav (Always Visible, Wrapped) */}
+        <nav className="w-full lg:hidden flex flex-wrap justify-center gap-x-3 sm:gap-x-5 gap-y-2 pt-1 pb-1">
+          {NAV.map((n) => (
+            <Link
+              key={n.href}
+              to={n.href}
+              className="text-[12px] sm:text-sm font-medium text-navy/80 hover:text-navy [&.active]:text-navy [&.active]:font-bold transition-colors"
+            >
+              {n.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* CTA (Desktop Only) */}
         <div className="hidden lg:flex items-center gap-4 shrink-0">
           <Link to="/contact" className="btn-gold text-sm py-2.5 px-5">
             Book Appointment
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button 
-          className="lg:hidden z-50 p-2 -mr-2 text-navy min-h-[44px] min-w-[44px] flex items-center justify-center"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
       </div>
-
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-ivory/98 backdrop-blur-xl flex flex-col lg:hidden animate-in fade-in duration-200">
-          {/* Spacer to push content below the sticky header */}
-          <div className="h-28 shrink-0"></div>
-          
-          <nav className="flex-1 overflow-y-auto flex flex-col items-center justify-start gap-6 w-full px-6 pb-24">
-            {NAV.map((n) => (
-              <Link
-                key={n.href}
-                to={n.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-display text-navy/80 hover:text-navy [&.active]:text-navy [&.active]:font-semibold relative after:content-[''] after:absolute after:w-0 after:h-px after:bg-gold after:left-1/2 after:-translate-x-1/2 after:-bottom-1 hover:after:w-full after:transition-all min-h-[44px] flex items-center justify-center w-full"
-              >
-                {n.label}
-              </Link>
-            ))}
-            <div className="mt-4">
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="btn-gold text-sm py-3 px-8 min-h-[44px] w-full text-center">
-                Book Appointment
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
