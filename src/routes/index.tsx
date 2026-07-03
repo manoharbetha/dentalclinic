@@ -51,17 +51,17 @@ function Hero() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-display text-[32px] sm:text-[38px] md:text-[48px] lg:text-[64px] leading-[1.15] text-navy font-semibold">
+          <h1 className="font-display text-[34px] sm:text-[38px] md:text-[48px] lg:text-[64px] leading-[1.1] md:leading-[1.15] text-navy font-semibold">
             Transforming Smiles with Expert Orthodontic & General Dental Care
           </h1>
 
           {/* Subheading */}
-          <p className="mt-6 text-base md:text-lg lg:text-xl text-charcoal/80 max-w-2xl font-light leading-relaxed">
+          <p className="mt-4 md:mt-6 text-base md:text-lg lg:text-xl text-charcoal/80 max-w-2xl font-light leading-relaxed">
             Led by Dr. Pentapalli Prasanthi, BDS, MDS, Specialist in Orthodontics and Dentofacial Orthopedics. Experience world-class care in a calming, premium environment.
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-8 md:mt-10 flex flex-wrap gap-4">
+          <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-4 w-full">
             <Link to="/contact" className="btn-gold justify-center py-4 text-base w-full sm:flex-1 px-4">
               <Calendar className="h-5 w-5 shrink-0" /> Book Appointment
             </Link>
@@ -79,7 +79,7 @@ function Hero() {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-12 md:mt-16 pt-8 border-t border-border/50 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-10 md:mt-16 pt-8 border-t border-border/50 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { icon: Award, t: "Orthodontist (MDS)" },
               { icon: ScanLine, t: "Digital X-Ray Available" },
@@ -179,7 +179,7 @@ function WhyUs() {
             Care you can feel, quality you can trust.
           </h2>
         </div>
-        <div className="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
           {items.map((it, i) => (
             <div
               key={it.t}
@@ -219,7 +219,7 @@ function ExperienceOurClinic() {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-4 md:gap-6 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-10" />
             <div className="flex flex-col gap-4 md:gap-6 pt-12 md:pt-20">
               <img src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783102638/2a7acdfd-6b3c-44b1-bb86-c3aafb3fdb38_n1fh3p.png" loading="lazy" alt="Clinic Reception" className="rounded-2xl shadow-elegant object-cover w-full h-48 md:h-64 transition-transform hover:scale-105 duration-700" />

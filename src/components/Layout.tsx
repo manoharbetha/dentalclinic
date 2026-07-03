@@ -42,8 +42,8 @@ export function Logo() {
 
 export function EmergencyBanner() {
   return (
-    <div className="bg-navy text-ivory text-xs md:text-sm">
-      <div className="mx-auto max-w-7xl px-4 py-2 flex flex-wrap items-center justify-between gap-2">
+    <div className="bg-navy text-ivory text-[11px] sm:text-xs md:text-sm">
+      <div className="mx-auto max-w-7xl px-4 py-1.5 flex flex-wrap items-center justify-between gap-2">
         <span className="flex items-center gap-2 text-ivory/80">
           <Zap className="h-3.5 w-3.5 text-gold shrink-0" />
           <span className="truncate">24×7 Dental Emergency Support</span>
@@ -85,7 +85,7 @@ export function Navbar() {
           : "bg-ivory/80 backdrop-blur-sm md:bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 h-14 md:h-20 flex items-center justify-between">
         <Link to="/" className="z-50 shrink-0" onClick={() => setMobileMenuOpen(false)}>
           <Logo />
         </Link>
@@ -210,7 +210,7 @@ export function FloatingWhatsApp() {
       href={waLink("Hi Dr. Prasanthi's Smile Care, I'd like to book an appointment.")}
       target="_blank"
       rel="noreferrer"
-      className="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-[0_10px_30px_-5px_rgba(16,185,129,0.5)] transition-transform hover:scale-110"
+      className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 h-14 w-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-[0_10px_30px_-5px_rgba(16,185,129,0.5)] transition-transform hover:scale-110"
       aria-label="Chat on WhatsApp"
     >
       <MessageCircle className="h-6 w-6" />
@@ -230,7 +230,7 @@ export function BackToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-24 right-6 z-40 h-11 w-11 rounded-full bg-navy text-gold flex items-center justify-center shadow-elegant hover:bg-royal transition-colors"
+      className="fixed bottom-36 right-4 md:bottom-24 md:right-6 z-40 h-11 w-11 rounded-full bg-navy text-gold flex items-center justify-center shadow-elegant hover:bg-royal transition-colors"
       aria-label="Back to top"
     >
       <ArrowUp className="h-5 w-5" />
