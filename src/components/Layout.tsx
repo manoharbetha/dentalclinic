@@ -22,17 +22,17 @@ export function waLink(msg: string) {
 
 export function Logo() {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-2 md:gap-3 min-w-0">
       <img 
         src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783102861/logo_zemlw8.png" 
         alt="Dr. Prasanthi's Smile Care Logo" 
-        className="h-10 md:h-12 w-auto object-contain shrink-0"
+        className="h-8 md:h-12 w-auto object-contain shrink-0"
       />
-      <div className="flex flex-col mt-0.5">
-        <div className="font-display text-navy text-lg md:text-xl font-semibold tracking-wide leading-none">
+      <div className="flex flex-col mt-0.5 min-w-0">
+        <div className="font-display text-navy text-sm sm:text-base md:text-xl font-semibold tracking-wide leading-none truncate">
           Dr. Prasanthi's
         </div>
-        <div className="font-display text-navy text-lg md:text-xl font-semibold tracking-wide mt-1.5 leading-none">
+        <div className="font-display text-navy text-sm sm:text-base md:text-xl font-semibold tracking-wide mt-1 leading-none truncate">
           Smile Care
         </div>
       </div>
