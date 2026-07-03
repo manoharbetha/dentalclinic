@@ -58,6 +58,7 @@ export function EmergencyBanner() {
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -66,16 +67,26 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
   return (
     <header
-      className={`sticky top-0 z-40 transition-all ${
-        scrolled
+      className={`sticky top-0 z-50 transition-all ${
+        scrolled || mobileMenuOpen
           ? "bg-ivory/95 backdrop-blur-md shadow-[0_4px_20px_-8px_rgba(15,44,89,0.15)]"
           : "bg-ivory/80 backdrop-blur-sm md:bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 md:px-6 h-16 md:h-20 flex flex-wrap lg:flex-nowrap items-center justify-between gap-y-2 py-2 lg:py-0">
-        <Link to="/" className="z-50 shrink-0">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
+        <Link to="/" className="z-50 shrink-0" onClick={() => setMobileMenuOpen(false)}>
           <Logo />
         </Link>
 
@@ -98,25 +109,38 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Horizontal Scroll Nav */}
-        <div className="w-full lg:hidden relative -mx-4">
-          {/* Fade edges to indicate scrollability */}
-          <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-ivory to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-ivory to-transparent z-10 pointer-events-none" />
-          
-          <div className="overflow-x-auto pb-2 px-6 flex items-center gap-1 scrollbar-hide snap-x snap-mandatory">
+        {/* Mobile Toggle */}
+        <button 
+          className="lg:hidden z-50 p-2 -mr-2 text-navy min-h-[44px] min-w-[44px] flex items-center justify-center"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Menu"
+        >
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 top-[64px] z-40 bg-ivory/98 backdrop-blur-xl flex flex-col items-center justify-center lg:hidden animate-in fade-in slide-in-from-top-4 duration-300">
+          <nav className="flex flex-col items-center gap-8 w-full px-6 pb-20">
             {NAV.map((n) => (
               <Link
                 key={n.href}
                 to={n.href}
-                className="whitespace-nowrap text-[13px] text-navy/70 hover:text-navy [&.active]:text-navy [&.active]:font-semibold relative snap-start min-h-[44px] min-w-[44px] flex items-center justify-center px-3 py-2 transition-colors rounded-md active:bg-navy/5"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-display text-navy/80 hover:text-navy [&.active]:text-navy [&.active]:font-semibold relative after:content-[''] after:absolute after:w-0 after:h-px after:bg-gold after:left-1/2 after:-translate-x-1/2 after:-bottom-2 hover:after:w-full after:transition-all min-h-[44px] flex items-center justify-center"
               >
                 {n.label}
               </Link>
             ))}
-          </div>
+            <div className="mt-8">
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="btn-gold text-base py-3 px-8 min-h-[44px]">
+                Book Appointment
+              </Link>
+            </div>
+          </nav>
         </div>
-      </div>
+      )}
     </header>
   );
 }

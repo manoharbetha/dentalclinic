@@ -23,10 +23,6 @@ function AboutPage() {
               height={1024}
               className="rounded-2xl shadow-elegant w-full object-cover aspect-square md:aspect-[4/5]"
             />
-            <div className="absolute -bottom-6 -right-4 md:-bottom-8 md:-right-6 bg-navy text-ivory p-5 md:p-6 rounded-2xl shadow-elegant max-w-[200px] md:max-w-[240px]">
-              <div className="text-gold text-3xl md:text-4xl font-display font-semibold">10+</div>
-              <div className="text-xs md:text-sm text-ivory/80 mt-1">Years of trusted dental expertise</div>
-            </div>
           </div>
 
           <div className="mt-4 lg:mt-0">
