@@ -121,20 +121,23 @@ export function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[64px] z-40 bg-ivory/98 backdrop-blur-xl flex flex-col items-center justify-center lg:hidden animate-in fade-in slide-in-from-top-4 duration-300">
-          <nav className="flex flex-col items-center gap-8 w-full px-6 pb-20">
+        <div className="fixed inset-0 z-40 bg-ivory/98 backdrop-blur-xl flex flex-col lg:hidden animate-in fade-in duration-200">
+          {/* Spacer to push content below the sticky header */}
+          <div className="h-28 shrink-0"></div>
+          
+          <nav className="flex-1 overflow-y-auto flex flex-col items-center justify-start gap-6 w-full px-6 pb-24">
             {NAV.map((n) => (
               <Link
                 key={n.href}
                 to={n.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-display text-navy/80 hover:text-navy [&.active]:text-navy [&.active]:font-semibold relative after:content-[''] after:absolute after:w-0 after:h-px after:bg-gold after:left-1/2 after:-translate-x-1/2 after:-bottom-2 hover:after:w-full after:transition-all min-h-[44px] flex items-center justify-center"
+                className="text-lg font-display text-navy/80 hover:text-navy [&.active]:text-navy [&.active]:font-semibold relative after:content-[''] after:absolute after:w-0 after:h-px after:bg-gold after:left-1/2 after:-translate-x-1/2 after:-bottom-1 hover:after:w-full after:transition-all min-h-[44px] flex items-center justify-center w-full"
               >
                 {n.label}
               </Link>
             ))}
-            <div className="mt-8">
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="btn-gold text-base py-3 px-8 min-h-[44px]">
+            <div className="mt-4">
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="btn-gold text-sm py-3 px-8 min-h-[44px] w-full text-center">
                 Book Appointment
               </Link>
             </div>
