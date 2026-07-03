@@ -108,27 +108,27 @@ function Hero() {
           </div>
 
           {/* Floating Card 1 */}
-          <div className="absolute -left-4 md:-left-12 top-10 md:top-20 bg-white/95 backdrop-blur-md rounded-xl p-4 md:p-5 shadow-elegant border border-white max-w-[200px] animate-fade-in-up">
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-gold/10 text-gold flex items-center justify-center shrink-0">
-                <Award className="h-5 w-5" />
+          <div className="absolute -left-2 md:-left-12 top-6 md:top-20 bg-white/95 backdrop-blur-md rounded-lg md:rounded-xl p-2.5 md:p-5 shadow-elegant border border-white max-w-[140px] md:max-w-[200px] animate-fade-in-up">
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="h-7 w-7 md:h-10 md:w-10 rounded-full bg-gold/10 text-gold flex items-center justify-center shrink-0">
+                <Award className="h-3.5 w-3.5 md:h-5 md:w-5" />
               </div>
               <div>
-                <div className="text-[10px] md:text-xs uppercase tracking-widest text-charcoal/60 font-semibold mb-0.5">Specialist Care</div>
-                <div className="text-sm md:text-base font-semibold text-navy leading-tight">Orthodontist (MDS)</div>
+                <div className="text-[8px] md:text-xs uppercase tracking-widest text-charcoal/60 font-semibold mb-0 md:mb-0.5 leading-none">Specialist Care</div>
+                <div className="text-[10px] md:text-base font-semibold text-navy leading-tight mt-0.5">Orthodontist (MDS)</div>
               </div>
             </div>
           </div>
 
           {/* Floating Card 2 */}
-          <div className="absolute -right-4 md:-right-8 bottom-10 md:bottom-20 bg-white/95 backdrop-blur-md rounded-xl p-4 md:p-5 shadow-elegant border border-white max-w-[200px] animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-navy/5 text-navy flex items-center justify-center shrink-0">
-                <ScanLine className="h-5 w-5" />
+          <div className="absolute -right-2 md:-right-8 bottom-6 md:bottom-20 bg-white/95 backdrop-blur-md rounded-lg md:rounded-xl p-2.5 md:p-5 shadow-elegant border border-white max-w-[140px] md:max-w-[200px] animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="h-7 w-7 md:h-10 md:w-10 rounded-full bg-navy/5 text-navy flex items-center justify-center shrink-0">
+                <ScanLine className="h-3.5 w-3.5 md:h-5 md:w-5" />
               </div>
               <div>
-                <div className="text-[10px] md:text-xs uppercase tracking-widest text-charcoal/60 font-semibold mb-0.5">Instant Diagnostics</div>
-                <div className="text-sm md:text-base font-semibold text-navy leading-tight">Digital X-Ray Onsite</div>
+                <div className="text-[8px] md:text-xs uppercase tracking-widest text-charcoal/60 font-semibold mb-0 md:mb-0.5 leading-none">Instant Diagnostics</div>
+                <div className="text-[10px] md:text-base font-semibold text-navy leading-tight mt-0.5">Digital X-Ray Onsite</div>
               </div>
             </div>
           </div>
