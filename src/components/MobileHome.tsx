@@ -89,7 +89,7 @@ export function MobileHome() {
         <div className="bg-white rounded-2xl p-4 shadow-sm border border-border/50 flex gap-4 items-center">
           <div className="h-20 w-20 shrink-0 rounded-full overflow-hidden border-2 border-gold/20">
             <img 
-              src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783103212/doctor_uav6c1.png" 
+              src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783098772/IMG-20260703-WA0000.jpg_yfewgz.jpg" 
               alt="Dr. Prasanthi"
               className="h-full w-full object-cover object-top"
               loading="lazy"
