@@ -18,6 +18,7 @@ import galleryReception from "@/assets/gallery-reception.jpg";
 import galleryEquipment from "@/assets/gallery-equipment.jpg";
 import gallerySmile from "@/assets/gallery-smile.jpg";
 import { waLink, PHONE } from "../components/Layout";
+import { MobileHome } from "../components/MobileHome";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -25,10 +26,15 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Hero />
-      <WhyUs />
-      <ExperienceOurClinic />
+    <div className="min-h-screen bg-background w-full overflow-x-hidden">
+      <div className="md:hidden">
+        <MobileHome />
+      </div>
+      <div className="hidden md:block">
+        <Hero />
+        <WhyUs />
+        <ExperienceOurClinic />
+      </div>
     </div>
   );
 }
