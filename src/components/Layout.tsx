@@ -12,6 +12,7 @@ export const NAV = [
   { label: "About", href: "/about" },
   { label: "Doctor", href: "/doctor" },
   { label: "Services", href: "/services" },
+  { label: "Reviews", href: "/reviews" },
   { label: "Our Commitment", href: "/commitment" },
   { label: "Contact", href: "/contact" },
 ];
@@ -127,14 +128,18 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
-            <div className="relative h-10 w-10 rounded-full bg-gradient-to-br from-ivory to-pearl flex items-center justify-center shrink-0">
-              <span className="font-display text-navy text-xl font-bold">P</span>
-            </div>
-            <div className="leading-tight">
-              <div className="font-display text-ivory text-xl">Dr. Prasanthi's Smile Care</div>
+            <div className="bg-ivory rounded-xl p-2.5 inline-flex items-center gap-3">
+              <img 
+                src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783102861/logo_zemlw8.png" 
+                alt="Dr. Prasanthi's Smile Care Logo" 
+                className="h-10 md:h-12 w-auto object-contain shrink-0"
+              />
+              <div className="font-display text-navy text-base md:text-lg font-bold leading-tight">
+                Dr. Prasanthi's<br/>Smile Care
+              </div>
             </div>
           </div>
-          <p className="mt-5 text-sm max-w-md text-ivory/70 leading-relaxed">
+          <p className="mt-6 text-sm max-w-md text-ivory/70 leading-relaxed">
             Premium multispeciality dental clinic in Vepagunta, Visakhapatnam.
             Advanced orthodontics, cosmetic and restorative dentistry delivered
             with compassion.
@@ -164,17 +169,20 @@ export function Footer() {
         <div>
           <div className="text-gold text-xs uppercase tracking-widest mb-5 font-semibold">Reach Us</div>
           <ul className="space-y-4 text-sm">
-            <li className="flex gap-3 items-start"><MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" /> <span className="leading-snug">Srinivasa Nagar, Vepagunta,<br/>Visakhapatnam</span></li>
+            <li className="flex gap-3 items-start"><MapPin className="h-4 w-4 text-gold shrink-0 mt-0.5" /> <span className="leading-snug">BRTS Road, Above Apollo Pharmacy,<br/>Opposite Simhapuri Layout Arch,<br/>Srinivasa Nagar, Prahaladapuram,<br/>Vepagunta, Andhra Pradesh 530047</span></li>
             <li className="flex gap-3 items-center"><Phone className="h-4 w-4 text-gold shrink-0" /> <a href={`tel:${PHONE}`} className="hover:text-gold transition-colors">{PHONE_DISPLAY}</a></li>
             <li className="flex gap-3 items-center"><MessageCircle className="h-4 w-4 text-gold shrink-0" /> <a href={waLink("Hello!")} target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">WhatsApp Us</a></li>
-            <li className="flex gap-3 items-center"><Clock className="h-4 w-4 text-gold shrink-0" /> <span>Mon–Sat · 10AM–8PM</span></li>
+            <li className="flex gap-3 items-center"><Clock className="h-4 w-4 text-gold shrink-0" /> <span>Open Daily · Closes at 7PM</span></li>
+            <li className="flex gap-3 items-center mt-6 pt-4 border-t border-ivory/10"><span className="text-gold font-bold text-lg leading-none tracking-widest">★★★★★</span> <span className="text-ivory font-medium">5.0 <span className="text-ivory/70 font-normal">(26 Google Reviews)</span></span></li>
           </ul>
         </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 md:px-6 mt-16 pt-8 border-t border-ivory/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory/40">
         <div className="text-center md:text-left">© {new Date().getFullYear()} Dr. Prasanthi's Smile Care. All rights reserved.</div>
-        <div>Vepagunta · Visakhapatnam</div>
+        <div>
+          <a href="https://prasanthi-smile-care.vercel.app" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">prasanthi-smile-care.vercel.app</a>
+        </div>
       </div>
     </footer>
   );

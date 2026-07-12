@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const MAPS_EMBED = "https://www.google.com/maps?q=Srinivasa+Nagar+Vepagunta+Visakhapatnam&output=embed";
+const MAPS_EMBED = "https://www.google.com/maps?q=Dr.+Prasanthi's+Smile+Care+BRTS+Road+Vepagunta&output=embed";
 
 function ContactPage() {
   return (
@@ -22,13 +22,13 @@ function ContactPage() {
 
 function Hours() {
   const schedule = [
-    ["Monday", "10:00 AM – 8:00 PM"],
-    ["Tuesday", "10:00 AM – 8:00 PM"],
-    ["Wednesday", "10:00 AM – 8:00 PM"],
-    ["Thursday", "10:00 AM – 8:00 PM"],
-    ["Friday", "10:00 AM – 8:00 PM"],
-    ["Saturday", "10:00 AM – 8:00 PM"],
-    ["Sunday", "Emergency appointments only"],
+    ["Monday", "10:00 AM – 7:00 PM"],
+    ["Tuesday", "10:00 AM – 7:00 PM"],
+    ["Wednesday", "10:00 AM – 7:00 PM"],
+    ["Thursday", "10:00 AM – 7:00 PM"],
+    ["Friday", "10:00 AM – 7:00 PM"],
+    ["Saturday", "10:00 AM – 7:00 PM"],
+    ["Sunday", "10:00 AM – 7:00 PM"],
   ];
 
   const status = useOpenStatus();
@@ -39,7 +39,7 @@ function Hours() {
         <div>
           <span className="gold-divider">Opening Hours</span>
           <h2 className="mt-5 font-display text-4xl md:text-5xl">
-            Open six days a week
+            Open daily
             <span className="block text-gold italic text-3xl md:text-4xl mt-2">
               for your smile.
             </span>
@@ -85,10 +85,8 @@ function useOpenStatus() {
       const now = new Date();
       const day = now.getDay();
       const hour = now.getHours() + now.getMinutes() / 60;
-      if (day === 0) {
-        setStatus({ open: false, label: "Sunday · Emergency only" });
-      } else if (hour >= 10 && hour < 20) {
-        setStatus({ open: true, label: "Closes at 8:00 PM" });
+      if (hour >= 10 && hour < 19) {
+        setStatus({ open: true, label: "Closes at 7:00 PM" });
       } else {
         setStatus({ open: false, label: "Opens at 10:00 AM" });
       }
@@ -126,9 +124,8 @@ function Contact() {
           <h2 className="mt-5 font-display text-4xl md:text-5xl text-navy">
             Book your appointment.
           </h2>
-          <p className="mt-4 text-charcoal/70">
-            We're right on BRTS Road, above Apollo Pharmacy, opposite Simhapuri
-            Layout Arch — easy to find and easy to reach.
+          <p className="mt-4 text-charcoal/70 max-w-lg mx-auto">
+            We are located on BRTS Road, above Apollo Pharmacy, opposite the Simhapuri Layout Arch.
           </p>
         </div>
 
@@ -138,10 +135,12 @@ function Contact() {
 
             <div className="mt-8 space-y-6">
               <ContactRow icon={MapPin} title="Address">
+                Dr. Prasanthi's Smile Care<br />
                 BRTS Road, Above Apollo Pharmacy,<br />
                 Opposite Simhapuri Layout Arch,<br />
-                Srinivasa Nagar, Vepagunta,<br />
-                Visakhapatnam, Andhra Pradesh
+                Srinivasa Nagar, Prahaladapuram,<br />
+                Simhachalam, Vepagunta,<br />
+                Andhra Pradesh - 530047
               </ContactRow>
               <ContactRow icon={Phone} title="Call">
                 <a href={`tel:${PHONE}`} className="hover:text-gold">

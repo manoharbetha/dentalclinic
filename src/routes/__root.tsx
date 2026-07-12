@@ -82,8 +82,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dr. Prasanthi's Smile Care | Advanced Dental Clinic" },
-      { name: "description", content: "Premium dental clinic providing orthodontics, cosmetic dentistry, implants, root canal treatment, smile design, pediatric dentistry and comprehensive oral healthcare." },
+      { title: "Dr. Prasanthi's Smile Care | Dental Clinic in Vepagunta, Visakhapatnam" },
+      { name: "description", content: "Dr. Prasanthi's Smile Care is a trusted dental clinic in Vepagunta, Visakhapatnam offering orthodontics, cosmetic dentistry, root canal treatment, dental implants, pediatric dentistry and comprehensive oral healthcare. Rated 5.0 on Google with 26 patient reviews." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -95,6 +95,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["LocalBusiness", "Dentist", "MedicalBusiness"],
+          "name": "Dr. Prasanthi's Smile Care",
+          "image": "https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783102861/logo_zemlw8.png",
+          "url": "https://prasanthi-smile-care.vercel.app",
+          "telephone": "+918500230245",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "BRTS Road, Above Apollo Pharmacy, Opposite Simhapuri Layout Arch, Srinivasa Nagar, Prahaladapuram",
+            "addressLocality": "Simhachalam, Vepagunta, Visakhapatnam",
+            "addressRegion": "Andhra Pradesh",
+            "postalCode": "530047",
+            "addressCountry": "IN"
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "10:00",
+            "closes": "19:00"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "26"
+          }
+        })
+      }
+    ]
   }),
   shellComponent: RootShell,
   component: RootComponent,

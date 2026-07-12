@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ShieldCheck, Microscope, HeartHandshake, Sparkles } from "lucide-react";
+import { ShieldCheck, Microscope, HeartHandshake, Sparkles, Star } from "lucide-react";
 import galleryReception from "@/assets/gallery-reception.jpg";
 import galleryTreatment from "@/assets/gallery-treatment.jpg";
 import heroClinic from "@/assets/hero-clinic.jpg";
@@ -38,6 +38,17 @@ function AboutPage() {
               sterilised treatment rooms equipped with the latest dental
               technology.
             </p>
+            <div className="mt-8 inline-flex items-center gap-3 px-4 py-2.5 rounded-xl border border-gold/20 bg-white shadow-sm">
+              <div className="flex gap-0.5">
+                <Star className="h-4 w-4 fill-gold text-gold" />
+                <Star className="h-4 w-4 fill-gold text-gold" />
+                <Star className="h-4 w-4 fill-gold text-gold" />
+                <Star className="h-4 w-4 fill-gold text-gold" />
+                <Star className="h-4 w-4 fill-gold text-gold" />
+              </div>
+              <div className="h-4 w-px bg-border"></div>
+              <span className="text-sm font-semibold text-navy">5.0 Google Rating <span className="font-normal text-charcoal/70">(26 Reviews)</span></span>
+            </div>
           </div>
         </div>
       </section>

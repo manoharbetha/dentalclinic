@@ -1,13 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import {
-  Phone,
-  MessageCircle,
-  Calendar,
-  Award,
+import { 
+  ArrowRight, 
+  Calendar, 
+  Phone, 
+  MapPin, 
+  Clock, 
+  Award, 
   ShieldCheck,
   Microscope,
-  HeartHandshake,
+  MessageCircle,
+  Star
 } from "lucide-react";
 
 import heroClinic from "@/assets/hero-clinic.jpg";
@@ -43,10 +46,16 @@ function Hero() {
         {/* Left Column: Text Content */}
         <div className="lg:col-span-7 flex flex-col">
           {/* Hero Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 w-fit mb-6 md:mb-8">
-            <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
-            <span className="text-xs md:text-sm font-medium uppercase tracking-widest text-navy">
-              Premium Dental Care • Vepagunta, Vizag
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/40 bg-gold/5 w-fit mb-6 md:mb-8 shadow-sm">
+            <div className="flex gap-0.5 text-gold">
+              <Star className="h-3.5 w-3.5 fill-gold" />
+              <Star className="h-3.5 w-3.5 fill-gold" />
+              <Star className="h-3.5 w-3.5 fill-gold" />
+              <Star className="h-3.5 w-3.5 fill-gold" />
+              <Star className="h-3.5 w-3.5 fill-gold" />
+            </div>
+            <span className="text-[11px] md:text-xs font-semibold uppercase tracking-wider text-navy">
+              5.0 Google Rating <span className="hidden sm:inline">(26 Verified Reviews)</span>
             </span>
           </div>
 
@@ -78,19 +87,25 @@ function Hero() {
             </a>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="mt-10 md:mt-16 pt-8 border-t border-border/50 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          {/* Trust Chips */}
+          <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3 md:gap-4">
             {[
-              { icon: Award, t: "Orthodontist (MDS)" },
-              { icon: ScanLine, t: "Digital X-Ray Available" },
-              { icon: ShieldCheck, t: "Hospital-grade Sterilization" },
-              { icon: HeartHandshake, t: "Personalized Treatment Plans" },
-            ].map((ti, idx) => (
-              <div key={idx} className="flex flex-col gap-2">
-                <ti.icon className="h-5 w-5 text-gold" />
-                <span className="text-xs md:text-sm font-medium text-navy leading-snug">{ti.t}</span>
+              "Modern Dental Clinic",
+              "Orthodontist (MDS)",
+              "Digital X-Ray",
+              "Sterilized Equipment",
+            ].map((chip, idx) => (
+              <div key={idx} className="flex items-center gap-1.5 text-charcoal/80">
+                <span className="flex items-center justify-center h-4 w-4 rounded-full bg-emerald-500/10 text-emerald-600 font-bold text-[10px]">✓</span>
+                <span className="text-[13px] font-medium tracking-tight">{chip}</span>
               </div>
             ))}
+          </div>
+
+          {/* Location Indicator */}
+          <div className="mt-6 flex items-center gap-2 text-xs md:text-sm text-charcoal/60 font-medium">
+            <MapPin className="h-4 w-4 text-gold shrink-0" />
+            Serving Vepagunta • Prahaladapuram • Simhachalam • Visakhapatnam
           </div>
         </div>
 
@@ -178,6 +193,9 @@ function WhyUs() {
           <h2 className="mt-5 font-display text-3xl md:text-4xl lg:text-5xl text-navy leading-tight">
             Care you can feel, quality you can trust.
           </h2>
+          <p className="mt-4 flex items-center justify-center gap-2 text-sm text-charcoal/80">
+            <Star className="h-4 w-4 fill-gold text-gold" /> Patients consistently rate us 5.0 on Google
+          </p>
         </div>
         <div className="mt-12 lg:mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
           {items.map((it, i) => (
