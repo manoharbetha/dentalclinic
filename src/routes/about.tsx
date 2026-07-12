@@ -12,7 +12,7 @@ function AboutPage() {
   return (
     <div className="min-h-screen bg-ivory">
       {/* Intro Section */}
-      <section className="py-16 md:py-32">
+      <section className="py-12 md:py-32">
         <div className="mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative">
             <img
@@ -27,9 +27,9 @@ function AboutPage() {
 
           <div className="mt-4 lg:mt-0">
             <span className="gold-divider">About The Clinic</span>
-            <h2 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-tight">
+            <h2 className="mt-4 md:mt-5 font-display text-3xl md:text-5xl lg:text-6xl text-navy leading-tight">
               A refined space for
-              <span className="italic text-royal block mt-2"> modern dentistry.</span>
+              <span className="italic text-royal block mt-1 md:mt-2"> modern dentistry.</span>
             </h2>
             <p className="mt-6 text-charcoal/80 leading-relaxed text-base md:text-lg">
               Dr. Prasanthi's Smile Care is a premium multispeciality dental clinic
@@ -54,7 +54,7 @@ function AboutPage() {
       </section>
 
       {/* Alternate Image/Text Section */}
-      <section className="py-16 md:py-24 bg-pearl border-y border-navy/5">
+      <section className="py-12 md:py-24 bg-pearl border-y border-navy/5">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -98,7 +98,7 @@ function AboutPage() {
       </section>
 
       {/* Alternate Image/Text Section 2 */}
-      <section className="py-16 md:py-32">
+      <section className="py-12 md:py-32">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>

@@ -44,7 +44,7 @@ export function Logo() {
 export function EmergencyBanner() {
   return (
     <div className="bg-navy text-ivory text-[11px] sm:text-xs md:text-sm">
-      <div className="mx-auto max-w-7xl px-4 py-1.5 flex flex-wrap items-center justify-between gap-2">
+      <div className="mx-auto max-w-7xl px-4 py-1 md:py-1.5 flex flex-wrap items-center justify-between gap-2">
         <span className="flex items-center gap-2 text-ivory/80">
           <Zap className="h-3.5 w-3.5 text-gold shrink-0" />
           <span className="truncate">24×7 Dental Emergency Support</span>
@@ -97,13 +97,13 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Mobile Nav (Pill-based, Highly legible, Separated) */}
-        <nav className="w-full lg:hidden flex flex-wrap justify-center gap-2 pt-2 pb-1">
+        {/* Mobile Nav (Pill-based, Horizontal Scroll, 44x44px Touch Targets) */}
+        <nav className="w-full lg:hidden flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-2 pt-2 pb-1 px-4 -mx-4 md:px-6 md:-mx-6">
           {NAV.map((n) => (
             <Link
               key={n.href}
               to={n.href}
-              className="text-[13px] font-medium text-navy/90 bg-navy/5 px-3.5 py-2 rounded-full hover:bg-navy/10 border border-navy/5 shadow-sm [&.active]:bg-navy [&.active]:text-ivory [&.active]:border-navy transition-all"
+              className="snap-start shrink-0 whitespace-nowrap text-[13px] font-medium text-navy/90 bg-navy/5 px-4 py-2.5 rounded-full hover:bg-navy/10 border border-navy/5 shadow-sm [&.active]:bg-navy [&.active]:text-ivory [&.active]:border-navy transition-all"
             >
               {n.label}
             </Link>
@@ -124,8 +124,8 @@ export function Navbar() {
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-ivory/80 pt-16 md:pt-20 pb-10 mt-auto">
-      <div className="mx-auto max-w-7xl px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+    <footer className="bg-navy text-ivory/80 pt-12 md:pt-20 pb-8 md:pb-10 mt-auto">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-10">
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
             <div className="bg-ivory rounded-xl p-2.5 inline-flex items-center gap-3">
@@ -194,10 +194,10 @@ export function FloatingWhatsApp() {
       href={waLink("Hi Dr. Prasanthi's Smile Care, I'd like to book an appointment.")}
       target="_blank"
       rel="noreferrer"
-      className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 h-14 w-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-[0_10px_30px_-5px_rgba(16,185,129,0.5)] transition-transform hover:scale-110"
+      className="fixed bottom-16 right-4 md:bottom-6 md:right-6 z-40 h-12 w-12 md:h-14 md:w-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-[0_10px_30px_-5px_rgba(16,185,129,0.5)] transition-transform hover:scale-110"
       aria-label="Chat on WhatsApp"
     >
-      <MessageCircle className="h-6 w-6" />
+      <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
       <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-30" />
     </a>
   );
@@ -214,10 +214,10 @@ export function BackToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-36 right-4 md:bottom-24 md:right-6 z-40 h-11 w-11 rounded-full bg-navy text-gold flex items-center justify-center shadow-elegant hover:bg-royal transition-colors"
+      className="fixed bottom-32 right-4 md:bottom-24 md:right-6 z-40 h-10 w-10 md:h-11 md:w-11 rounded-full bg-navy text-gold flex items-center justify-center shadow-elegant hover:bg-royal transition-colors"
       aria-label="Back to top"
     >
-      <ArrowUp className="h-5 w-5" />
+      <ArrowUp className="h-4 w-4 md:h-5 md:w-5" />
     </button>
   );
 }

@@ -58,14 +58,14 @@ function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-ivory">
-      <section className="py-16 md:py-32">
+      <section className="py-12 md:py-32">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto">
             <span className="gold-divider">Our Services</span>
-            <h2 className="mt-5 font-display text-4xl md:text-5xl text-navy">
+            <h2 className="mt-5 font-display text-3xl md:text-5xl text-navy">
               Complete dental care under one elegant roof.
             </h2>
-            <p className="mt-4 text-charcoal/70 mb-10">
+            <p className="mt-4 text-charcoal/70 mb-8 md:mb-10">
               From routine care to full-mouth rehabilitation, every treatment is
               delivered with precision and warmth.
             </p>
@@ -79,7 +79,7 @@ function ServicesPage() {
             </div>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
             {groups.map((g) => (
               <article
                 key={g.cat}

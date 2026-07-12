@@ -24,25 +24,25 @@ function ReviewsPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-navy text-ivory relative overflow-hidden">
+      <section className="pt-24 pb-12 md:pt-40 md:pb-24 bg-navy text-ivory relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 md:px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gold/40 bg-gold/5 w-fit mb-8 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/40 bg-gold/5 w-fit mb-6 md:mb-8 shadow-sm">
             <div className="flex gap-0.5 text-gold">
-              <Star className="h-4 w-4 fill-gold" />
-              <Star className="h-4 w-4 fill-gold" />
-              <Star className="h-4 w-4 fill-gold" />
-              <Star className="h-4 w-4 fill-gold" />
-              <Star className="h-4 w-4 fill-gold" />
+              <Star className="h-3.5 w-3.5 md:h-4 md:w-4 fill-gold" />
+              <Star className="h-3.5 w-3.5 md:h-4 md:w-4 fill-gold" />
+              <Star className="h-3.5 w-3.5 md:h-4 md:w-4 fill-gold" />
+              <Star className="h-3.5 w-3.5 md:h-4 md:w-4 fill-gold" />
+              <Star className="h-3.5 w-3.5 md:h-4 md:w-4 fill-gold" />
             </div>
-            <span className="text-sm font-semibold uppercase tracking-wider text-ivory">
+            <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-ivory">
               5.0 Google Rating <span className="text-ivory/70 font-normal">(26 Reviews)</span>
             </span>
           </div>
 
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-ivory mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ivory mb-5 md:mb-6 leading-tight">
             Trusted by Our Patients
           </h1>
-          <p className="text-lg text-ivory/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-ivory/70 max-w-2xl mx-auto leading-relaxed">
             We measure our success by the smiles and satisfaction of those we treat. 
             Read what our patients have to say about their experience at Dr. Prasanthi's Smile Care.
           </p>
@@ -53,7 +53,7 @@ function ReviewsPage() {
       </section>
 
       {/* Reviews Grid */}
-      <section className="py-20 md:py-32 bg-ivory">
+      <section className="py-12 md:py-32 bg-ivory">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {REVIEWS.map((review, i) => (

@@ -62,14 +62,14 @@ function CommitmentPage() {
 
   return (
     <div className="min-h-screen bg-pearl">
-      <section className="py-16 md:py-32 relative overflow-hidden">
+      <section className="py-12 md:py-32 relative overflow-hidden">
         {/* Decorative background */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-gold/5 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
         
         <div className="mx-auto max-w-7xl px-4 md:px-6 relative">
           <div className="text-center max-w-2xl mx-auto">
             <span className="gold-divider">Our Commitment</span>
-            <h1 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-tight">
+            <h1 className="mt-4 md:mt-5 font-display text-3xl md:text-5xl lg:text-6xl text-navy leading-tight">
               Why Patients Will Trust Us
             </h1>
             <p className="mt-6 text-charcoal/70 leading-relaxed md:text-lg">
@@ -77,11 +77,11 @@ function CommitmentPage() {
             </p>
           </div>
 
-          <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
             {commitments.map((c, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-elegant hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-2xl p-5 md:p-6 border border-border/50 shadow-sm hover:shadow-elegant hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="h-12 w-12 rounded-full bg-navy/5 flex items-center justify-center text-navy mb-5">
                   <c.icon className="h-5 w-5" />
@@ -94,7 +94,7 @@ function CommitmentPage() {
             ))}
           </div>
 
-          <div className="mt-20 md:mt-32 max-w-4xl mx-auto text-center bg-white p-8 md:p-12 rounded-3xl border border-gold/20 shadow-elegant relative overflow-hidden">
+          <div className="mt-16 md:mt-32 max-w-4xl mx-auto text-center bg-white p-6 md:p-12 rounded-3xl border border-gold/20 shadow-elegant relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-navy/5 to-transparent pointer-events-none" />
             <div className="relative z-10">
               <Sparkles className="h-8 w-8 text-gold mx-auto mb-6" />

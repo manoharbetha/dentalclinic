@@ -10,9 +10,9 @@ export const Route = createFileRoute("/doctor")({
 function DoctorPage() {
   return (
     <div className="min-h-screen bg-navy text-ivory">
-      <section className="py-20 md:py-32 relative overflow-hidden">
+      <section className="py-12 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, #C7A96B 0%, transparent 40%), radial-gradient(circle at 80% 80%, #1E4FA3 0%, transparent 40%)" }} />
-        <div className="mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-12 gap-12 md:gap-14 items-center relative">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-12 gap-10 md:gap-14 items-center relative">
           <div className="lg:col-span-5">
             <div className="relative">
               <div className="absolute -inset-3 bg-gradient-to-br from-gold/40 to-royal/30 blur-2xl rounded-3xl" />
@@ -22,24 +22,24 @@ function DoctorPage() {
                 loading="lazy"
                 width={1024}
                 height={1024}
-                className="relative rounded-2xl w-full aspect-[4/5] object-cover shadow-elegant border border-gold/30"
+                className="relative rounded-2xl w-full aspect-[4/5] sm:aspect-square md:aspect-[4/5] object-cover shadow-elegant border border-gold/30"
               />
-              <div className="absolute bottom-5 left-5 right-5 bg-navy/90 backdrop-blur border border-gold/30 rounded-xl px-5 py-4">
-                <div className="text-xs uppercase tracking-[0.28em] text-gold font-semibold mb-1">Reg. No.</div>
-                <div className="text-ivory font-display text-xl">A25779</div>
+              <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5 bg-navy/90 backdrop-blur border border-gold/30 rounded-xl px-4 py-3 md:px-5 md:py-4">
+                <div className="text-[10px] md:text-xs uppercase tracking-[0.28em] text-gold font-semibold mb-1">Reg. No.</div>
+                <div className="text-ivory font-display text-lg md:text-xl">A25779</div>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-7">
             <span className="gold-divider">Meet Your Doctor</span>
-            <h2 className="mt-5 font-display text-4xl md:text-5xl lg:text-6xl leading-tight">
+            <h2 className="mt-4 md:mt-5 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
               Dr. Pentapalli Prasanthi
-              <span className="block text-gold text-2xl md:text-3xl mt-3 font-normal italic">
+              <span className="block text-gold text-xl sm:text-2xl md:text-3xl mt-2 md:mt-3 font-normal italic">
                 BDS, MDS
               </span>
             </h2>
-            <div className="mt-5 text-lg text-ivory/90 font-medium">
+            <div className="mt-4 md:mt-5 text-base md:text-lg text-ivory/90 font-medium leading-snug">
               Specialist in Orthodontics & Dentofacial Orthopedics
             </div>
 

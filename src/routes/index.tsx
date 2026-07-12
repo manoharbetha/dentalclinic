@@ -35,14 +35,14 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-ivory pt-8 pb-20 md:pt-16 md:pb-32 lg:pt-24 lg:pb-40">
+    <section className="relative overflow-hidden bg-ivory pt-4 pb-12 md:pt-16 md:pb-32 lg:pt-24 lg:pb-40">
       {/* Background Decor */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-gradient-to-bl from-gold/10 to-transparent rounded-full blur-3xl opacity-70" />
         <div className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-navy/5 to-transparent rounded-full blur-3xl opacity-70" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 grid lg:grid-cols-12 gap-8 lg:gap-8 items-center relative z-10">
         {/* Left Column: Text Content */}
         <div className="lg:col-span-7 flex flex-col">
           {/* Hero Badge */}
@@ -60,7 +60,7 @@ function Hero() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-display text-[34px] sm:text-[38px] md:text-[48px] lg:text-[64px] leading-[1.1] md:leading-[1.15] text-navy font-semibold">
+          <h1 className="font-display text-3xl sm:text-[38px] md:text-[48px] lg:text-[64px] leading-[1.15] md:leading-[1.15] text-navy font-semibold tracking-tight">
             Transforming Smiles with Expert Orthodontic & General Dental Care
           </h1>
 
@@ -70,20 +70,22 @@ function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-4 w-full">
-            <Link to="/contact" className="btn-gold justify-center py-4 text-base w-full sm:flex-1 px-4">
-              <Calendar className="h-5 w-5 shrink-0" /> Book Appointment
-            </Link>
-            <a
-              href={waLink("Hi, I'd like to book an appointment at Dr. Prasanthi's Smile Care.")}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full font-display font-medium transition-all duration-300 shadow-sm bg-navy text-ivory hover:bg-royal justify-center py-4 text-base flex-1 px-4"
-            >
-              <MessageCircle className="h-5 w-5 shrink-0" /> WhatsApp
-            </a>
-            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-full font-display font-medium transition-all duration-300 shadow-sm bg-navy text-ivory hover:bg-royal justify-center py-4 text-base flex-1 px-4 lg:hidden xl:flex">
-              <Phone className="h-5 w-5 shrink-0" /> Call Now
+          <div className="mt-6 md:mt-10 flex flex-col md:flex-row gap-3 md:gap-4 w-full">
+            <div className="grid grid-cols-2 gap-3 md:flex md:flex-1 md:gap-4">
+              <Link to="/contact" className="btn-gold justify-center py-3.5 md:py-4 text-[13px] sm:text-sm md:text-base w-full md:flex-1 px-1 sm:px-4">
+                <Calendar className="h-4 w-4 md:h-5 md:w-5 shrink-0" /> <span className="truncate">Book Appt</span>
+              </Link>
+              <a
+                href={waLink("Hi, I'd like to book an appointment at Dr. Prasanthi's Smile Care.")}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full font-display font-medium transition-all duration-300 shadow-sm bg-navy text-ivory hover:bg-royal justify-center py-3.5 md:py-4 text-[13px] sm:text-sm md:text-base w-full md:flex-1 px-1 sm:px-4"
+              >
+                <MessageCircle className="h-4 w-4 md:h-5 md:w-5 shrink-0" /> <span className="truncate">WhatsApp</span>
+              </a>
+            </div>
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-full font-display font-medium transition-all duration-300 shadow-sm bg-navy text-ivory hover:bg-royal justify-center py-3.5 md:py-4 text-[13px] sm:text-sm md:text-base w-full md:flex-1 px-4 md:hidden xl:flex">
+              <Phone className="h-4 w-4 md:h-5 md:w-5 shrink-0" /> Call Now
             </a>
           </div>
 
@@ -186,7 +188,7 @@ function WhyUs() {
   ];
   
   return (
-    <section className="py-20 md:py-32 bg-pearl">
+    <section className="py-12 md:py-32 bg-pearl">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="text-center max-w-2xl mx-auto">
           <span className="gold-divider">Why Choose Us</span>

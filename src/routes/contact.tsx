@@ -184,7 +184,7 @@ function Contact() {
               Fill in the details and we'll confirm your slot on WhatsApp.
             </p>
 
-            <form onSubmit={submit} className="mt-6 grid sm:grid-cols-2 gap-4">
+            <form onSubmit={submit} className="mt-6 grid sm:grid-cols-2 gap-5 md:gap-4">
               <Field label="Full Name" required>
                 <input
                   required
@@ -334,15 +334,15 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-24 md:py-32 bg-ivory">
+    <section className="py-16 md:py-32 bg-ivory">
       <div className="mx-auto max-w-4xl px-4 md:px-6">
         <div className="text-center">
           <span className="gold-divider">Frequently Asked</span>
-          <h2 className="mt-5 font-display text-4xl md:text-5xl text-navy">
+          <h2 className="mt-4 md:mt-5 font-display text-3xl sm:text-4xl md:text-5xl text-navy">
             Answers to help you decide.
           </h2>
         </div>
-        <div className="mt-12 space-y-3">
+        <div className="mt-8 md:mt-12 space-y-3">
           {faqs.map((f, i) => (
             <div
               key={f.q}
