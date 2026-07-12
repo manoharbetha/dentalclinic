@@ -11,12 +11,12 @@ const REVIEWS = [
     text: "Excellent dental clinic! The doctor was very professional, kind, and explained the treatment clearly. The staff were friendly and helpful, and the clinic was very clean and hygienic. The treatment was comfortable, and I am very satisfied with the results. I highly recommend this clinic to anyone looking for quality dental care.",
   },
   {
-    name: "Mahalaxmi",
-    text: "Super experience with doctor and treatment.",
+    name: "Murali Krishna",
+    text: "Had an excellent experience at this dental clinic. The doctors and staff were very professional, friendly, and caring. They explained every step of the treatment clearly, making me feel comfortable and confident. The clinic was clean and well maintained.",
   },
   {
-    name: "Vardhu Kowsi",
-    text: "Good treatment.",
+    name: "Seepana Yaswanth",
+    text: "Excellent service and a wonderful experience. The dentist was kind, patient, and explained every step of the treatment clearly. The staff was welcoming, and the clinic was clean and hygienic. I felt well cared for from start to finish.",
   },
 ];
 
@@ -77,7 +77,7 @@ function ReviewsPage() {
                   </div>
                   <div>
                     <div className="font-display font-semibold text-navy text-lg">{review.name}</div>
-                    <div className="text-xs text-charcoal/50 uppercase tracking-widest font-medium mt-0.5">Verified Patient</div>
+                    <div className="text-xs text-charcoal/50 uppercase tracking-widest font-medium mt-0.5">Google Verified</div>
                   </div>
                 </div>
               </div>
@@ -89,7 +89,7 @@ function ReviewsPage() {
               Read all our success stories on Google
             </h3>
             <a 
-              href="https://g.page/r/your-google-link" 
+              href="https://www.google.com/maps/place/Dr.Prasanthi's+Smile+Care/@17.7736856,83.2294754,17z/data=!4m8!3m7!1s0x3a3967a29abe9f2f:0xbbc6aeb1866993e4!8m2!3d17.7736856!4d83.2294754!9m1!1b1!16s%2Fg%2F11nqxy38ty!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" 
               target="_blank" 
               rel="noreferrer"
               className="btn-gold inline-flex items-center gap-2"

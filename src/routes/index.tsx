@@ -71,21 +71,19 @@ function Hero() {
 
           {/* CTA Buttons */}
           <div className="mt-6 md:mt-10 flex flex-col md:flex-row gap-3 md:gap-4 w-full">
-            <div className="grid grid-cols-2 gap-3 md:flex md:flex-1 md:gap-4">
-              <Link to="/contact" className="btn-gold justify-center py-3.5 md:py-4 text-[13px] sm:text-sm md:text-base w-full md:flex-1 px-1 sm:px-4">
-                <Calendar className="h-4 w-4 md:h-5 md:w-5 shrink-0" /> <span className="truncate">Book Appt</span>
-              </Link>
-              <a
-                href={waLink("Hi, I'd like to book an appointment at Dr. Prasanthi's Smile Care.")}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full font-display font-medium transition-all duration-300 shadow-sm bg-navy text-ivory hover:bg-royal justify-center py-3.5 md:py-4 text-[13px] sm:text-sm md:text-base w-full md:flex-1 px-1 sm:px-4"
-              >
-                <MessageCircle className="h-4 w-4 md:h-5 md:w-5 shrink-0" /> <span className="truncate">WhatsApp</span>
-              </a>
-            </div>
-            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-full font-display font-medium transition-all duration-300 shadow-sm bg-navy text-ivory hover:bg-royal justify-center py-3.5 md:py-4 text-[13px] sm:text-sm md:text-base w-full md:flex-1 px-4 md:hidden xl:flex">
-              <Phone className="h-4 w-4 md:h-5 md:w-5 shrink-0" /> Call Now
+            <Link to="/contact" className="btn-gold justify-center py-4 text-base w-full md:flex-1 px-4">
+              <Calendar className="h-5 w-5 shrink-0" /> Book Appointment
+            </Link>
+            <a
+              href={waLink("Hi, I'd like to book an appointment at Dr. Prasanthi's Smile Care.")}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full font-display font-medium transition-all duration-300 shadow-sm bg-navy text-ivory hover:bg-royal justify-center py-4 text-base w-full md:flex-1 px-4"
+            >
+              <MessageCircle className="h-5 w-5 shrink-0" /> WhatsApp
+            </a>
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-full font-display font-medium transition-all duration-300 shadow-sm bg-navy text-ivory hover:bg-royal justify-center py-4 text-base w-full md:flex-1 px-4 md:hidden xl:flex">
+              <Phone className="h-5 w-5 shrink-0" /> Call Now
             </a>
           </div>
 

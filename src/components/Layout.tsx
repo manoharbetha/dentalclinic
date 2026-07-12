@@ -59,6 +59,7 @@ export function EmergencyBanner() {
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -67,65 +68,120 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all ${
-        scrolled
-          ? "bg-ivory/95 backdrop-blur-md shadow-[0_4px_20px_-8px_rgba(15,44,89,0.15)]"
-          : "bg-ivory/80 backdrop-blur-sm md:bg-transparent"
-      }`}
-    >
-      <div className="mx-auto max-w-7xl px-4 md:px-6 py-3 md:py-0 min-h-[56px] md:h-20 flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0">
-        
-        {/* Top Row on Mobile (Logo) */}
-        <div className="w-full lg:w-auto flex items-center justify-center lg:justify-start">
-          <Link to="/" className="z-50 shrink-0">
+    <>
+      <header
+        className={`sticky top-0 z-50 transition-all ${
+          scrolled
+            ? "bg-ivory/95 backdrop-blur-md shadow-[0_4px_20px_-8px_rgba(15,44,89,0.15)] py-2 md:py-0"
+            : "bg-ivory/95 backdrop-blur-md lg:bg-transparent py-3 md:py-0"
+        }`}
+      >
+        <div className="mx-auto max-w-7xl px-4 md:px-6 h-14 md:h-20 flex items-center justify-between">
+          
+          {/* Logo (Left) */}
+          <div className="flex items-center">
+            <Link to="/" className="z-50 shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
+              <Logo />
+            </Link>
+          </div>
+
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {NAV.map((n) => (
+              <Link
+                key={n.href}
+                to={n.href}
+                className="text-sm text-navy/80 hover:text-navy [&.active]:text-navy [&.active]:font-medium relative after:content-[''] after:absolute after:w-0 after:h-px after:bg-gold after:left-0 after:-bottom-1 hover:after:w-full after:transition-all"
+              >
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA & Mobile Toggle (Right) */}
+          <div className="flex items-center gap-4 shrink-0">
+            {/* Desktop CTA */}
+            <div className="hidden lg:block">
+              <Link to="/contact" className="btn-gold text-sm py-2.5 px-5">
+                Book Appointment
+              </Link>
+            </div>
+            
+            {/* Mobile Hamburger Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              className="lg:hidden p-2 -mr-2 text-navy hover:bg-navy/5 rounded-lg transition-colors flex items-center justify-center min-h-[44px] min-w-[44px]"
+              aria-label="Open Menu"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
+
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[60] lg:hidden flex flex-col bg-ivory/95 backdrop-blur-xl">
+          <div className="flex items-center justify-between px-4 h-14 sm:h-[68px] border-b border-navy/10 mt-8">
             <Logo />
-          </Link>
-        </div>
-
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {NAV.map((n) => (
-            <Link
-              key={n.href}
-              to={n.href}
-              className="text-sm text-navy/80 hover:text-navy [&.active]:text-navy [&.active]:font-medium relative after:content-[''] after:absolute after:w-0 after:h-px after:bg-gold after:left-0 after:-bottom-1 hover:after:w-full after:transition-all"
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 -mr-2 text-navy hover:bg-navy/5 rounded-lg transition-colors flex items-center justify-center min-h-[44px] min-w-[44px]"
+              aria-label="Close Menu"
             >
-              {n.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile Nav (Pill-based, Horizontal Scroll, 44x44px Touch Targets) */}
-        <nav className="w-full lg:hidden flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-2 pt-2 pb-1 px-4 -mx-4 md:px-6 md:-mx-6">
-          {NAV.map((n) => (
-            <Link
-              key={n.href}
-              to={n.href}
-              className="snap-start shrink-0 whitespace-nowrap text-[13px] font-medium text-navy/90 bg-navy/5 px-4 py-2.5 rounded-full hover:bg-navy/10 border border-navy/5 shadow-sm [&.active]:bg-navy [&.active]:text-ivory [&.active]:border-navy transition-all"
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+          <nav className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-6">
+            {NAV.map((n) => (
+              <Link
+                key={n.href}
+                to={n.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="font-display text-2xl text-navy/80 hover:text-navy hover:pl-2 transition-all [&.active]:text-gold [&.active]:font-semibold"
+              >
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="p-6 border-t border-navy/10 bg-ivory pb-safe">
+            <Link 
+              to="/contact" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="btn-gold w-full justify-center py-4 text-base"
             >
-              {n.label}
+              Book Appointment
             </Link>
-          ))}
-        </nav>
-
-        {/* CTA (Desktop Only) */}
-        <div className="hidden lg:flex items-center gap-4 shrink-0">
-          <Link to="/contact" className="btn-gold text-sm py-2.5 px-5">
-            Book Appointment
-          </Link>
+          </div>
         </div>
-
-      </div>
-    </header>
+      )}
+    </>
   );
 }
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-ivory/80 pt-12 md:pt-20 pb-8 md:pb-10 mt-auto">
-      <div className="mx-auto max-w-7xl px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-10">
+    <footer className="bg-navy text-ivory/80 pt-10 md:pt-20 pb-6 md:pb-10 mt-auto">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-10">
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
             <div className="bg-ivory rounded-xl p-2.5 inline-flex items-center gap-3">
@@ -178,7 +234,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 md:px-6 mt-16 pt-8 border-t border-ivory/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory/40">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 mt-12 md:mt-16 pt-6 md:pt-8 border-t border-ivory/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory/40">
         <div className="text-center md:text-left">© {new Date().getFullYear()} Dr. Prasanthi's Smile Care. All rights reserved.</div>
         <div>
           <a href="https://prasanthi-smile-care.vercel.app" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors">prasanthi-smile-care.vercel.app</a>
@@ -194,11 +250,13 @@ export function FloatingWhatsApp() {
       href={waLink("Hi Dr. Prasanthi's Smile Care, I'd like to book an appointment.")}
       target="_blank"
       rel="noreferrer"
-      className="fixed bottom-16 right-4 md:bottom-6 md:right-6 z-40 h-12 w-12 md:h-14 md:w-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-[0_10px_30px_-5px_rgba(16,185,129,0.5)] transition-transform hover:scale-110"
+      className="fixed bottom-20 md:bottom-24 right-4 md:right-6 z-40 bg-[#25D366] text-white p-3 md:p-3.5 rounded-full shadow-lg hover:scale-110 hover:shadow-[0_8px_30px_rgba(37,211,102,0.3)] transition-all flex items-center justify-center group"
       aria-label="Chat on WhatsApp"
     >
-      <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
-      <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-30" />
+      <MessageCircle className="h-6 w-6 md:h-7 md:w-7" />
+      <span className="absolute right-full mr-4 bg-white text-[#25D366] px-3 py-1.5 rounded-xl text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none hidden md:block">
+        Chat with us
+      </span>
     </a>
   );
 }
@@ -206,18 +264,19 @@ export function FloatingWhatsApp() {
 export function BackToTop() {
   const [show, setShow] = useState(false);
   useEffect(() => {
-    const on = () => setShow(window.scrollY > 500);
-    window.addEventListener("scroll", on);
-    return () => window.removeEventListener("scroll", on);
+    const handleScroll = () => setShow(window.scrollY > 400);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  if (!show) return null;
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-32 right-4 md:bottom-24 md:right-6 z-40 h-10 w-10 md:h-11 md:w-11 rounded-full bg-navy text-gold flex items-center justify-center shadow-elegant hover:bg-royal transition-colors"
+      className={`fixed bottom-5 md:bottom-8 right-4 md:right-6 z-40 bg-navy text-ivory p-3 md:p-3.5 rounded-full shadow-lg hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(15,44,89,0.3)] transition-all flex items-center justify-center ${
+        show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
+      }`}
       aria-label="Back to top"
     >
-      <ArrowUp className="h-4 w-4 md:h-5 md:w-5" />
+      <ArrowUp className="h-5 w-5 md:h-6 md:w-6" />
     </button>
   );
 }
