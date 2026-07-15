@@ -251,6 +251,7 @@ function ExperienceOurClinic() {
             </div>
             <div className="flex flex-col gap-4 md:gap-6">
               <img src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783105462/4fd50618-4db3-4a85-9587-37875489df7a_hbka2w.png" loading="lazy" alt="Modern Dental Equipment" className="rounded-2xl shadow-elegant object-cover w-full h-56 md:h-72 transition-transform hover:scale-105 duration-700" />
+              <img src="https://res.cloudinary.com/dmp1d9o5w/image/upload/v1784104616/clinic_machine1_vura4x.png" loading="lazy" alt="Sterilization Chamber" className="rounded-2xl shadow-elegant object-cover w-full h-40 md:h-48 transition-transform hover:scale-105 duration-700" />
             </div>
           </div>
         </div>
