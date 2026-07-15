@@ -143,7 +143,8 @@ export function MobileHome() {
           {[
             { img: "https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783105462/4fd50618-4db3-4a85-9587-37875489df7a_hbka2w.png", text: "Modern Sterilization" },
             { img: "https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783103787/reception_wk1y5d.png", text: "Premium Interiors" },
-            { img: "https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783105666/7cefd7a2-a8bf-41e1-8833-8e945c08c746_cfwugr.png", text: "Advanced hi Equipment" }
+            {img: "https://res.cloudinary.com/dmp1d9o5w/image/upload/v1784104616/clinic_machine1_vura4x.png", text: "Autoclave Sterilizer"}
+            { img: "https://res.cloudinary.com/dmp1d9o5w/image/upload/v1783105666/7cefd7a2-a8bf-41e1-8833-8e945c08c746_cfwugr.png", text: "Advanced Equipment"}
           ].map((c, i) => (
             <div key={i} className="snap-center shrink-0 w-[240px] relative rounded-xl overflow-hidden aspect-[4/3] border border-ivory/10">
               <img src={c.img} alt={c.text} className="w-full h-full object-cover" loading="lazy" />
